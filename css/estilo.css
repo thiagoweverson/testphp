@@ -1,156 +1,118 @@
-*{
-  margin: 0px;
-  padding: 0px;
-}
+/* UTILIDADES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body {
+    font-family: cursive;
+   }
+   a {
+    text-decoration: none;
+   }
+   li {
+    list-style: none;
+   }
 
-body{
-	width: 100vw;
-	height: 100vh;
-	background-image: url("../img/background_body.jpg");
-	background-size: 100%;
-	background-repeat: no-repeat;
-  background-attachment: fixed;
+/* NAVBAR ESTILO */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: teal;
+    color: #fff;
+   }
+   .nav-links a {
+    color: #fff;
+   }
+   /* LOGO */
+   .logo {
+    font-size: 32px;
+   }
+   /* NAVBAR MENU */
+   .menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+   }
+   .menu li:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+   }
+   .menu li {
+    padding: 5px 14px;
+   }
+   /* MENU SUSPENSO */
+   .services {
+    position: relative; 
+   }
+   .dropdown {
+    background-color: rgb(1, 139, 139);
+    padding: 1em 0;
+    position: absolute; /*COM RELAÇÃO AOS PAIS*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+   }
+   .dropdown li + li {
+    margin-top: 10px;
+   }
+   .dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+   }
+   .dropdown li:hover {
+    background-color: #4c9e9e;
+   }
+   .services:hover .dropdown {
+    display: block;
+   }
 
-}
-
-.class_top{
-  display:inline-block;
-  background: #333;
-  width: 100%;
-  height: 00px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 100%;
-  height: 95px;
-  font-size: 18pt;
-}
-
-span{
-  background: #007777;
-  color: black;
-  border-radius: 30px;
-  padding: 30px;
-  }
-
-.txt_ini{  
-  float: left;
-  background: #007777;
-	width: 100px;
-	height: 30px;
-  margin-left: 20px;
-  border-radius: 30px;
-  text-decoration: none;
-	font-weight: bold;
-	text-align: center;
-  font-size: 20pt;
-}
-
-.txt_ini:hover{
-	color: #ff0000;
-	background: #ffff00;
-	width: 105px;
-	height: 35px;
-	font-size: 26pt;
-}
-
-.txt_quart{
-  position: relative;
-  background: #007777;
-  width: 100px;
-  height: 30px;
-  margin-left: 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  font-size: 20pt;
-  top: 3px;
-}
-
-.txt_quart:hover{
-	color: #ff0000;
-	background: #ffff00;
-	width: 105px;
-	height: 33px;
-	font-size: 26pt;
-}
-
-
-ul{
-  display: inline-block;
-}
-
-ul ul{
-  position: absolute;
-  visibility: hidden;
-}
-
-ul li:hover ul{
-  visibility: visible;
-  text-decoration: none;
-  
-}
-
-li{
-  list-style-type: none;
-}
-
-a{
-  
-  text-decoration: none;
-}
-
-a:link{
-  color: black;
-}
-
-a:visited{
-  color: black;
-}
-
-a:hover{
-  color: red;
-}
-
-.class_list_menu{
-  background: #ddd;
-  margin-top: 70px;
-  border-radius: 10px;
-  margin-left: -200px;
-  font-weight: bold;
-  width: 185px;
-	text-align: center;
-}
-
-.class_list_menu:hover{
-  
-  margin-left: -160px;
-	
-	
-}
- 
-
-.class_quartos{
-  position: relative;
-  background: #ddffff;
-  padding: 5px;
-  margin-top: 5px;
-  margin-right: 7px;
-  margin-left: 7px;
-  width: 150px;
-  text-align: center; 
-  color: red;
-  text-decoration: none;
-  border-radius: 7px;
-}
-
-.class_quartos:hover{
-  background: #bbdddd;
-  padding: 9px;
-	font-size: 20pt;
-  width: 155px;
-	color: red;
-	
-
-}
-
+/* NAVBAR MENU RESPONSIVA*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+    display: none;
+   } 
+   /*HAMBURGER MENU*/
+   .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+   }
+   /* APLICAÇÃO MEDIA QUERIES */
+   @media (max-width: 768px) {
+   .menu { 
+    display:none;
+    position: absolute;
+    background-color:teal;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+   }
+   .menu li:hover {
+    display: inline-block;
+    background-color:#4c9e9e;
+    transition: 0.3s ease;
+   }
+   .menu li + li {
+    margin-top: 12px;
+   }
+   input[type=checkbox]:checked ~ .menu{
+    display: block;
+   }
+   .hamburger {
+    display: block;
+   }
+   .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+   }
+   .dropdown li:hover {
+    background-color: #4c9e9e;
+   }
+   }
